@@ -1,6 +1,6 @@
 
 class FoodApp:
-
-
-    @classmethod
-    def INIT(self): #Initial Method
+    
+    @Staticmethod
+    def INIT():#Initial Method
+        print("<< Welcome to Online Food Ordering >>")
