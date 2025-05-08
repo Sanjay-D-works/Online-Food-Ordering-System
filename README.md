@@ -2,5 +2,5 @@
 
 Python project(OOPS Concept)
 
-swiggy like online food ordering system
+online food ordering system(Swifgy)
 
