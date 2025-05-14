@@ -7,3 +7,7 @@ Python project(OOPS Concept)
 Screenshots
 
 Add screenshots of the application UI here (e.g., login page, menu page, admin dashboard).
+
+
+Tech Stack
+	•	Backend: Python (e.g., Flask or Django) for server-side logic.
