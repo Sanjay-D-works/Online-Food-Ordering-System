@@ -6,7 +6,7 @@ Python project(OOPS Concept)
 
 Screenshots
 
-Add screenshots of the application  here (e.g., login page, menu page, admin dashboard).
+Add screenshots of the application  here (e.g., login page, menu page, admin dashboard).Using python not frontend
 
 
 
