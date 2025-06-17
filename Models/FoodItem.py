@@ -1,3 +1,4 @@
+#Fooditem from the online food ordering system
 from Models.AbstractItem import AbstractItem
 
 class FoodItem(AbstractItem):
