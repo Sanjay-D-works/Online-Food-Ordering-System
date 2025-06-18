@@ -1,81 +1,63 @@
-<<<<<<< HEAD
-from FoodApp import FoodApp
-
-    def Init():
-        print("Welcome from GitHub version")
-        print("This part is added from local version")
-
-
-FoodApp.Init()
-=======
-#Online Food Ordering System
-
 from Models.User import User
 from Models.UserManager import UserManager
+from Controller.FoodManager import MainMenu
 
 class LoginSystem:
-    
+
     def Login(self):
-        
         mailid = input("Email Id: ")
         password = input("Password: ")
-
         user = UserManager.FindUser(mailid, password)
-
         if user is not None:
-            pass #Next Step
+            print("Login Successful...")
+            menu = MainMenu()
+            menu.Start()
         else:
-            print("Invalid Mail/password.... Please Retry")
+            print("Invalid Email/Password. Please retry.")
 
     def Register(self):
-        
         name = input("Name: ")
-        mobile = int(input("mobile No: "))
+        mobile = int(input("Mobile No: "))
         mailid = input("Email Id: ")
         password = input("Password: ")
-
-        user = User(name,mobile,mailid,password)
-
+        user = User(name, mobile, mailid, password)
         UserManager.AddUser(user)
-        
+        print("Registration successful.")
 
     def GuestLogin(self):
-        pass
+        print("Welcome, Guest User!")
+        menu = MainMenu()
+        menu.Start()
+
+    def Exit(self):
+        print("Thank you for using our Food App...")
+        exit(0)
 
     def ValidateOption(self, option):
-        
-        if option == 1:
-            self.Login()
-        elif option == 2:
-            self.Register()
-        elif option == 3:
-            self.GuestLogin(self)
-        elif option == 4:
-            print("Thank you for using our Food App...")
-            exit()
+        options = {
+            1: self.Login,
+            2: self.Register,
+            3: self.GuestLogin,
+            4: self.Exit
+        }
+        action = options.get(option)
+        if action:
+            action()
         else:
-            print("Invalid Choice.. please Retry")
- 
+            print("Invalid Option")
+
 class FoodApp:
-    
-    LoginOption = {1:"Login",2:"Register",3:"Guest",4:"Exit"}
 
     @staticmethod
-    def Init(): # Initial Method
-        print("<<Welcome to Online Food Ordering>>")
+    def Init():
+        print("<< Welcome to Online Food Ordering System >>")
+        loginSystem = LoginSystem()
+        while True:
+            print("\n--- Main Menu ---")
+            print("1. Login\n2. Register\n3. Guest Login\n4. Exit")
+            try:
+                choice = int(input("Please Enter Your Choice: "))
+                loginSystem.ValidateOption(choice)
+            except ValueError:
+                print("Invalid input. Please enter a number.")
 
-    loginSystem = LoginSystem()
-
-    while True:
-        for option in FoodApp.LoginOption:
-            print(f"{option}.{FoodApp.LoginOption[option]}", end = " ")
-        print()
-
-
-        try:
-            choice = int(input("Please Enter Your Choice : "))
-            loginSystem.ValidateOption(choice)
-        except ValueError:
-            print("Invalid input.. Please Enter the Valid choice")
-
->>>>>>> 4c28a89 (Adding the Models for FoodApp.py)
