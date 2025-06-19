@@ -1,6 +1,7 @@
 from Models.User import User
 from Models.UserManager import UserManager
-from Controller.FoodManager import MainMenu
+from Controller.MainMenu import MainMenu
+
 
 class LoginSystem:
 
@@ -11,13 +12,13 @@ class LoginSystem:
         if user is not None:
             print("Login Successful...")
             menu = MainMenu()
-            menu.Start()
+            menu.start()
         else:
             print("Invalid Email/Password. Please retry.")
 
     def Register(self):
         name = input("Name: ")
-        mobile = int(input("Mobile No: "))
+        mobile = input("Mobile No: ")
         mailid = input("Email Id: ")
         password = input("Password: ")
         user = User(name, mobile, mailid, password)
@@ -27,7 +28,7 @@ class LoginSystem:
     def GuestLogin(self):
         print("Welcome, Guest User!")
         menu = MainMenu()
-        menu.Start()
+        menu.start()
 
     def Exit(self):
         print("Thank you for using our Food App...")
@@ -60,4 +61,3 @@ class FoodApp:
                 loginSystem.ValidateOption(choice)
             except ValueError:
                 print("Invalid input. Please enter a number.")
-

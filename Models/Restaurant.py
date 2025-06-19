@@ -21,5 +21,5 @@ class Restaurant(AbstractItem):
                 return
         self.__FoodMenus = items
 
-    def DisplayItem(self, start):
+    def DisplayItem(self, start=1):
         print(f"{start} => {self.Name} | Rating: {self.Rating}")

@@ -5,10 +5,9 @@ class MainMenu:
 
     __Options = {
         1: "show_restaurants",
-        2: "show_food_items",
-        3: "search_restaurant",
-        4: "search_food_item",
-        5: "logout"
+        2: "search_restaurant",
+        3: "search_food_item",
+        4: "logout"
     }
 
     def __init__(self):
@@ -28,24 +27,9 @@ class MainMenu:
         except ValueError:
             print("Invalid input.")
 
-    def show_food_items(self, food_items=None):
-        if food_items is not None:
-            for i, item in enumerate(food_items, 1):
-                item.DisplayItem(i)
-
-            try:
-                choices = list(map(int, input("Choose your food items (e.g., 1,2): ").split(',')))
-                cart = Cart(food_items, choices)
-                cart.ProcessOrder(food_items)
-            except (ValueError, KeyError):
-                print("Invalid selection.")
-        else:
-            print("No food items to display.")
-
     def search_restaurant(self):
         name = input("Enter restaurant name: ")
-        res = self.__food_manager.find_restaurant(name)
-
+        res = self.__food_manager.FindRestaurant(name)
         if res:
             print("Restaurant found:")
             res.DisplayItem()
@@ -69,6 +53,20 @@ class MainMenu:
                 print("Invalid menu selection.")
         except ValueError:
             print("Invalid input.")
+
+    def show_food_items(self, food_items=None):
+        if food_items is not None:
+            for i, item in enumerate(food_items, 1):
+                item.DisplayItem(i)
+
+            try:
+                choices = list(map(int, input("Choose your food items (e.g., 1,2): ").split(',')))
+                cart = Cart(food_items, choices)
+                cart.ProcessOrder(food_items)
+            except (ValueError, KeyError):
+                print("Invalid selection.")
+        else:
+            print("No food items to display.")
 
     def logout(self):
         print("Logging out...")

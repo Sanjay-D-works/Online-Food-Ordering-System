@@ -4,4 +4,4 @@ class User:
         self.Name = name
         self.Phone = phn
         self.MailId = mail
-        self.Password = pwd 
+        self.Password = pwd

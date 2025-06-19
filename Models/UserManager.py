@@ -1,6 +1,5 @@
 from Models.User import User
 
-
 class UserManager:
     __User = []
 
@@ -13,7 +12,8 @@ class UserManager:
             print("Invalid User")
 
     @classmethod
-    def FindUser(self, mailid, pwd):
+    def FindUser(cls, mailid, pwd):
         for user in cls.__User:
             if user.MailId == mailid and user.Password == pwd:
                 return user
+        return None

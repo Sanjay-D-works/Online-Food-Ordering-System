@@ -1,7 +1,6 @@
 from Models.FoodItem import FoodItem
 from Models.FoodMenu import FoodMenu
 from Models.Restaurant import Restaurant
-from Models.Cart import Cart
 
 class FoodManager:
 
@@ -45,3 +44,4 @@ class FoodManager:
         for res in self.Restaurants:
             if res.Name.lower() == name.lower():
                 return res
+        return None

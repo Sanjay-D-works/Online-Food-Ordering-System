@@ -21,4 +21,3 @@ class FoodMenu(AbstractItem):
 
     def DisplayItem(self, start):
         print(f"{start} => {self.Name}")
-
