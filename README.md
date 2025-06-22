@@ -34,19 +34,33 @@ It supports:
 ## 📁 Project Folder Structure
 
 OnlineFoodOrderingSystem/
+
 ├── main.py
+
 ├── FoodApp.py
+
 ├── Controller/
+
 │ ├── FoodManager.py
+
 │ └── MainMenu.py
+
 ├── Models/
+
 │ ├── AbstractItem.py
+
 │ ├── Cart.py
+
 │ ├── FoodItem.py
+
 │ ├── FoodMenu.py
+
 │ ├── Restaurant.py
+
 │ ├── User.py
+
 │ └── UserManager.py
+
 └── README.md
 
 
@@ -64,28 +78,43 @@ OnlineFoodOrderingSystem/
 
 python3 main.py
 
+
 Follow prompts on terminal to register, log in, and order food.
 
 🚀 Features
 
 👤 User Registration and Login
+
 🎭 Guest Login Support
+
 🏪 Browse and Search Restaurants
+
 🍱 View Food Items and Menus
+
 🛒 Add Items to Cart and Place Order
+
 💳 Simulated Payment System (UPI, Card, COD)
+
 ✅ Follows OOP principles (abstraction, encapsulation, etc.)
+
+
 📌 Future Improvements
 
 🧾 Store user data using files or database (currently in-memory)
+
 🔍 Implement search by food item
+
 📱 Build GUI using Tkinter or migrate to Flask web app
+
 🧪 Add unit testing with unittest
+
+
 👨‍💻 Author
 
 Sanjay D
-📧 [Your email]
+📧 [sanjaydevarajworks@gmail.com]
 🌐 GitHub: https://github.com/Sanjay-D-works
+
 
 📜 License
 
